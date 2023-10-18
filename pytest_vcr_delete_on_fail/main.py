@@ -95,7 +95,7 @@ def get_cassette_folder_path(test_file_path: str) -> str:
 
 def get_default_cassette_path(item: Function) -> str:
     """Return the cassette full path given the test item."""
-    test = item.location[2]
+    test = re.sub("[:/]", "-", item.location[2])
     test_file_path = item.location[0]
     cassette_path = get_cassette_folder_path(test_file_path)
     return f"{cassette_path}/{test}.yaml"

@@ -12,3 +12,4 @@ dist
 test-pytester-temp
 /docs/build
 .mypy_cache
+.env
